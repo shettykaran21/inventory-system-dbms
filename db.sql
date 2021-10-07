@@ -1,32 +1,7 @@
--- phpMyAdmin SQL Dump
--- version 4.8.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Server version: 10.1.33-MariaDB
-SET
-  SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-
-SET
-  AUTOCOMMIT = 0;
-
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
-
-SET
-  time_zone = "+00:00";
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */
-;
-
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */
-;
-
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */
-;
-
-/*!40101 SET NAMES utf8mb4 */
-;
-
+SET time_zone = "+00:00";
 --
 -- Database: `dbms_project`
 --
@@ -38,14 +13,11 @@ CREATE TABLE `category` (
   `CATEGORY_ID` int NOT NULL,
   `CNAME` varchar(50) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
-
 --
 -- Dumping data for table `category`
 --
-INSERT INTO
-  `category` (`CATEGORY_ID`, `CNAME`)
-VALUES
-  (0, 'Keyboard'),
+INSERT INTO `category` (`CATEGORY_ID`, `CNAME`)
+VALUES (0, 'Keyboard'),
   (1, 'Mouse'),
   (2, 'Monitor'),
   (3, 'Motherboard'),
@@ -54,7 +26,6 @@ VALUES
   (6, 'Headset'),
   (7, 'CPU'),
   (9, 'Others');
-
 -- --------------------------------------------------------
 --
 -- Table structure for table `customer`
@@ -65,24 +36,20 @@ CREATE TABLE `customer` (
   `LAST_NAME` varchar(50) DEFAULT NULL,
   `PHONE_NUMBER` varchar(11) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
-
 --
 -- Dumping data for table `customer`
 --
-INSERT INTO
-  `customer` (
+INSERT INTO `customer` (
     `CUST_ID`,
     `FIRST_NAME`,
     `LAST_NAME`,
     `PHONE_NUMBER`
   )
-VALUES
-  (9, 'Hailee', 'Steinfield', '09394566543'),
+VALUES (9, 'Hailee', 'Steinfield', '09394566543'),
   (11, 'A Walk in Customer', NULL, NULL),
   (14, 'Chuchay', 'Jusay', '09781633451'),
   (15, 'Kimbert', 'Duyag', '09956288467'),
   (16, 'Dieqcohr', 'Rufino', '09891344576');
-
 -- --------------------------------------------------------
 --
 -- Table structure for table `employee`
@@ -98,12 +65,10 @@ CREATE TABLE `employee` (
   `HIRED_DATE` varchar(50) NOT NULL,
   `LOCATION_ID` int DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
-
 --
 -- Dumping data for table `employee`
 --
-INSERT INTO
-  `employee` (
+INSERT INTO `employee` (
     `EMPLOYEE_ID`,
     `FIRST_NAME`,
     `LAST_NAME`,
@@ -114,14 +79,13 @@ INSERT INTO
     `HIRED_DATE`,
     `LOCATION_ID`
   )
-VALUES
-  (
+VALUES (
     1,
-    'Prince Ly',
-    'Cesar',
+    'Nihaal',
+    'Shetty',
     'Male',
-    'princelycesar23@gmail.com',
-    '09124033805',
+    'nihaalshetty29@gmail.com',
+    '8569856985',
     1,
     '0000-00-00',
     113
@@ -148,7 +112,6 @@ VALUES
     '2019-03-06',
     158
   );
-
 -- --------------------------------------------------------
 --
 -- Table structure for table `job`
@@ -157,16 +120,12 @@ CREATE TABLE `job` (
   `JOB_ID` int NOT NULL,
   `JOB_TITLE` varchar(50) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
-
 --
 -- Dumping data for table `job`
 --
-INSERT INTO
-  `job` (`JOB_ID`, `JOB_TITLE`)
-VALUES
-  (1, 'Manager'),
+INSERT INTO `job` (`JOB_ID`, `JOB_TITLE`)
+VALUES (1, 'Manager'),
   (2, 'Cashier');
-
 -- --------------------------------------------------------
 --
 -- Table structure for table `location`
@@ -176,14 +135,11 @@ CREATE TABLE `location` (
   `PROVINCE` varchar(100) DEFAULT NULL,
   `CITY` varchar(100) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
-
 --
 -- Dumping data for table `location`
 --
-INSERT INTO
-  `location` (`LOCATION_ID`, `PROVINCE`, `CITY`)
-VALUES
-  (111, 'Negros Occidental', 'Bacolod City'),
+INSERT INTO `location` (`LOCATION_ID`, `PROVINCE`, `CITY`)
+VALUES (111, 'Negros Occidental', 'Bacolod City'),
   (112, 'Negros Occidental', 'Bacolod City'),
   (113, 'Negros Occidental', 'Binalbagan'),
   (114, 'Negros Occidental', 'Himamaylan'),
@@ -219,7 +175,6 @@ VALUES
   (156, 'Negros Occidental', 'Bacolod'),
   (157, 'Camarines Norte', 'Labo'),
   (158, 'Negros Occidental', 'Binalbagan');
-
 -- --------------------------------------------------------
 --
 -- Table structure for table `manager`
@@ -231,20 +186,17 @@ CREATE TABLE `manager` (
   `EMAIL` varchar(50) DEFAULT NULL,
   `PHONE_NUMBER` varchar(11) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
-
 --
 -- Dumping data for table `manager`
 --
-INSERT INTO
-  `manager` (
+INSERT INTO `manager` (
     `FIRST_NAME`,
     `LAST_NAME`,
     `LOCATION_ID`,
     `EMAIL`,
     `PHONE_NUMBER`
   )
-VALUES
-  (
+VALUES (
     'Prince Ly',
     'Cesar',
     113,
@@ -266,7 +218,6 @@ VALUES
     'regine@',
     '09123456789'
   );
-
 -- --------------------------------------------------------
 --
 -- Table structure for table `product`
@@ -283,12 +234,10 @@ CREATE TABLE `product` (
   `SUPPLIER_ID` int DEFAULT NULL,
   `DATE_STOCK_IN` varchar(50) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
-
 --
 -- Dumping data for table `product`
 --
-INSERT INTO
-  `product` (
+INSERT INTO `product` (
     `PRODUCT_ID`,
     `PRODUCT_CODE`,
     `NAME`,
@@ -300,8 +249,7 @@ INSERT INTO
     `SUPPLIER_ID`,
     `DATE_STOCK_IN`
   )
-VALUES
-  (
+VALUES (
     1,
     '20191001',
     'Lenovo ideapad 20059',
@@ -601,7 +549,6 @@ VALUES
     16,
     '2019-03-13'
   );
-
 -- --------------------------------------------------------
 --
 -- Table structure for table `supplier`
@@ -612,19 +559,16 @@ CREATE TABLE `supplier` (
   `LOCATION_ID` int NOT NULL,
   `PHONE_NUMBER` varchar(11) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
-
 --
 -- Dumping data for table `supplier`
 --
-INSERT INTO
-  `supplier` (
+INSERT INTO `supplier` (
     `SUPPLIER_ID`,
     `COMPANY_NAME`,
     `LOCATION_ID`,
     `PHONE_NUMBER`
   )
-VALUES
-  (11, 'InGame Tech', 114, '09457488521'),
+VALUES (11, 'InGame Tech', 114, '09457488521'),
   (12, 'Asus', 115, '09635877412'),
   (13, 'Razer Co.', 111, '09587855685'),
   (
@@ -634,7 +578,6 @@ VALUES
     '09124033805'
   ),
   (16, 'A4tech', 155, '09775673257');
-
 -- --------------------------------------------------------
 --
 -- Table structure for table `transaction`
@@ -652,12 +595,10 @@ CREATE TABLE `transaction` (
   `DATE` varchar(50) NOT NULL,
   `TRANS_D_ID` varchar(250) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
-
 --
 -- Dumping data for table `transaction`
 --
-INSERT INTO
-  `transaction` (
+INSERT INTO `transaction` (
     `TRANS_ID`,
     `CUST_ID`,
     `NUMOFITEMS`,
@@ -670,8 +611,7 @@ INSERT INTO
     `DATE`,
     `TRANS_D_ID`
   )
-VALUES
-  (
+VALUES (
     3,
     16,
     '3',
@@ -801,7 +741,6 @@ VALUES
     '2019-03-18 19:40 pm',
     '0318194016'
   );
-
 -- --------------------------------------------------------
 --
 -- Table structure for table `transaction_details`
@@ -815,12 +754,10 @@ CREATE TABLE `transaction_details` (
   `EMPLOYEE` varchar(250) NOT NULL,
   `ROLE` varchar(250) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
-
 --
 -- Dumping data for table `transaction_details`
 --
-INSERT INTO
-  `transaction_details` (
+INSERT INTO `transaction_details` (
     `ID`,
     `TRANS_D_ID`,
     `PRODUCTS`,
@@ -829,8 +766,7 @@ INSERT INTO
     `EMPLOYEE`,
     `ROLE`
   )
-VALUES
-  (
+VALUES (
     7,
     '0318160336',
     'Lenovo ideapad 20059',
@@ -956,7 +892,6 @@ VALUES
     'Josuey',
     'Cashier'
   );
-
 -- --------------------------------------------------------
 --
 -- Table structure for table `type`
@@ -965,16 +900,12 @@ CREATE TABLE `type` (
   `TYPE_ID` int NOT NULL,
   `TYPE` varchar(50) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
-
 --
 -- Dumping data for table `type`
 --
-INSERT INTO
-  `type` (`TYPE_ID`, `TYPE`)
-VALUES
-  (1, 'Admin'),
+INSERT INTO `type` (`TYPE_ID`, `TYPE`)
+VALUES (1, 'Admin'),
   (2, 'User');
-
 -- --------------------------------------------------------
 --
 -- Table structure for table `users`
@@ -986,23 +917,20 @@ CREATE TABLE `users` (
   `PASSWORD` varchar(50) DEFAULT NULL,
   `TYPE_ID` int DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
-
 --
 -- Dumping data for table `users`
 --
-INSERT INTO
-  `users` (
+INSERT INTO `users` (
     `ID`,
     `EMPLOYEE_ID`,
     `USERNAME`,
     `PASSWORD`,
     `TYPE_ID`
   )
-VALUES
-  (
+VALUES (
     1,
     1,
-    'unguardable',
+    'admin',
     'd033e22ae348aeb5660fc2140aec35850c4da997',
     1
   ),
@@ -1012,290 +940,181 @@ VALUES
     'test',
     'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3',
     2
-  ),
-  (
-    9,
-    4,
-    'mncpdrnl',
-    '8cb2237d0679ca88db6464eac60da96345513964',
-    2
   );
-
 --
 -- Indexes for dumped tables
 --
 --
 -- Indexes for table `category`
 --
-ALTER TABLE
-  `category`
-ADD
-  PRIMARY KEY (`CATEGORY_ID`);
-
+ALTER TABLE `category`
+ADD PRIMARY KEY (`CATEGORY_ID`);
 --
 -- Indexes for table `customer`
 --
-ALTER TABLE
-  `customer`
-ADD
-  PRIMARY KEY (`CUST_ID`);
-
+ALTER TABLE `customer`
+ADD PRIMARY KEY (`CUST_ID`);
 --
 -- Indexes for table `employee`
 --
-ALTER TABLE
-  `employee`
-ADD
-  PRIMARY KEY (`EMPLOYEE_ID`),
-ADD
-  UNIQUE KEY `EMPLOYEE_ID` (`EMPLOYEE_ID`),
-ADD
-  UNIQUE KEY `PHONE_NUMBER` (`PHONE_NUMBER`),
-ADD
-  KEY `LOCATION_ID` (`LOCATION_ID`),
-ADD
-  KEY `JOB_ID` (`JOB_ID`);
-
+ALTER TABLE `employee`
+ADD PRIMARY KEY (`EMPLOYEE_ID`),
+  ADD UNIQUE KEY `EMPLOYEE_ID` (`EMPLOYEE_ID`),
+  ADD UNIQUE KEY `PHONE_NUMBER` (`PHONE_NUMBER`),
+  ADD KEY `LOCATION_ID` (`LOCATION_ID`),
+  ADD KEY `JOB_ID` (`JOB_ID`);
 --
 -- Indexes for table `job`
 --
-ALTER TABLE
-  `job`
-ADD
-  PRIMARY KEY (`JOB_ID`);
-
+ALTER TABLE `job`
+ADD PRIMARY KEY (`JOB_ID`);
 --
 -- Indexes for table `location`
 --
-ALTER TABLE
-  `location`
-ADD
-  PRIMARY KEY (`LOCATION_ID`);
-
+ALTER TABLE `location`
+ADD PRIMARY KEY (`LOCATION_ID`);
 --
 -- Indexes for table `manager`
 --
-ALTER TABLE
-  `manager`
-ADD
-  UNIQUE KEY `PHONE_NUMBER` (`PHONE_NUMBER`),
-ADD
-  KEY `LOCATION_ID` (`LOCATION_ID`);
-
+ALTER TABLE `manager`
+ADD UNIQUE KEY `PHONE_NUMBER` (`PHONE_NUMBER`),
+  ADD KEY `LOCATION_ID` (`LOCATION_ID`);
 --
 -- Indexes for table `product`
 --
-ALTER TABLE
-  `product`
-ADD
-  PRIMARY KEY (`PRODUCT_ID`),
-ADD
-  KEY `CATEGORY_ID` (`CATEGORY_ID`),
-ADD
-  KEY `SUPPLIER_ID` (`SUPPLIER_ID`);
-
+ALTER TABLE `product`
+ADD PRIMARY KEY (`PRODUCT_ID`),
+  ADD KEY `CATEGORY_ID` (`CATEGORY_ID`),
+  ADD KEY `SUPPLIER_ID` (`SUPPLIER_ID`);
 --
 -- Indexes for table `supplier`
 --
-ALTER TABLE
-  `supplier`
-ADD
-  PRIMARY KEY (`SUPPLIER_ID`),
-ADD
-  KEY `LOCATION_ID` (`LOCATION_ID`);
-
+ALTER TABLE `supplier`
+ADD PRIMARY KEY (`SUPPLIER_ID`),
+  ADD KEY `LOCATION_ID` (`LOCATION_ID`);
 --
 -- Indexes for table `transaction`
 --
-ALTER TABLE
-  `transaction`
-ADD
-  PRIMARY KEY (`TRANS_ID`),
-ADD
-  KEY `TRANS_DETAIL_ID` (`TRANS_D_ID`),
-ADD
-  KEY `CUST_ID` (`CUST_ID`);
-
+ALTER TABLE `transaction`
+ADD PRIMARY KEY (`TRANS_ID`),
+  ADD KEY `TRANS_DETAIL_ID` (`TRANS_D_ID`),
+  ADD KEY `CUST_ID` (`CUST_ID`);
 --
 -- Indexes for table `transaction_details`
 --
-ALTER TABLE
-  `transaction_details`
-ADD
-  PRIMARY KEY (`ID`),
-ADD
-  KEY `TRANS_D_ID` (`TRANS_D_ID`) USING BTREE;
-
+ALTER TABLE `transaction_details`
+ADD PRIMARY KEY (`ID`),
+  ADD KEY `TRANS_D_ID` (`TRANS_D_ID`) USING BTREE;
 --
 -- Indexes for table `type`
 --
-ALTER TABLE
-  `type`
-ADD
-  PRIMARY KEY (`TYPE_ID`);
-
+ALTER TABLE `type`
+ADD PRIMARY KEY (`TYPE_ID`);
 --
 -- Indexes for table `users`
 --
-ALTER TABLE
-  `users`
-ADD
-  PRIMARY KEY (`ID`),
-ADD
-  KEY `TYPE_ID` (`TYPE_ID`),
-ADD
-  KEY `EMPLOYEE_ID` (`EMPLOYEE_ID`);
-
+ALTER TABLE `users`
+ADD PRIMARY KEY (`ID`),
+  ADD KEY `TYPE_ID` (`TYPE_ID`),
+  ADD KEY `EMPLOYEE_ID` (`EMPLOYEE_ID`);
 --
 -- AUTO_INCREMENT for dumped tables
 --
 --
 -- AUTO_INCREMENT for table `category`
 --
-ALTER TABLE
-  `category`
-MODIFY
-  `CATEGORY_ID` int NOT NULL AUTO_INCREMENT,
+ALTER TABLE `category`
+MODIFY `CATEGORY_ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 10;
-
 --
 -- AUTO_INCREMENT for table `customer`
 --
-ALTER TABLE
-  `customer`
-MODIFY
-  `CUST_ID` int NOT NULL AUTO_INCREMENT,
+ALTER TABLE `customer`
+MODIFY `CUST_ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 17;
-
 --
 -- AUTO_INCREMENT for table `employee`
 --
-ALTER TABLE
-  `employee`
-MODIFY
-  `EMPLOYEE_ID` int NOT NULL AUTO_INCREMENT,
+ALTER TABLE `employee`
+MODIFY `EMPLOYEE_ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 5;
-
 --
 -- AUTO_INCREMENT for table `location`
 --
-ALTER TABLE
-  `location`
-MODIFY
-  `LOCATION_ID` int NOT NULL AUTO_INCREMENT,
+ALTER TABLE `location`
+MODIFY `LOCATION_ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 159;
-
 --
 -- AUTO_INCREMENT for table `product`
 --
-ALTER TABLE
-  `product`
-MODIFY
-  `PRODUCT_ID` int NOT NULL AUTO_INCREMENT,
+ALTER TABLE `product`
+MODIFY `PRODUCT_ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 28;
-
 --
 -- AUTO_INCREMENT for table `supplier`
 --
-ALTER TABLE
-  `supplier`
-MODIFY
-  `SUPPLIER_ID` int NOT NULL AUTO_INCREMENT,
+ALTER TABLE `supplier`
+MODIFY `SUPPLIER_ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 17;
-
 --
 -- AUTO_INCREMENT for table `transaction`
 --
-ALTER TABLE
-  `transaction`
-MODIFY
-  `TRANS_ID` int NOT NULL AUTO_INCREMENT,
+ALTER TABLE `transaction`
+MODIFY `TRANS_ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 13;
-
 --
 -- AUTO_INCREMENT for table `transaction_details`
 --
-ALTER TABLE
-  `transaction_details`
-MODIFY
-  `ID` int NOT NULL AUTO_INCREMENT,
+ALTER TABLE `transaction_details`
+MODIFY `ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 21;
-
 --
 -- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE
-  `users`
-MODIFY
-  `ID` int NOT NULL AUTO_INCREMENT,
+ALTER TABLE `users`
+MODIFY `ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 10;
-
 --
 -- Constraints for dumped tables
 --
 --
 -- Constraints for table `employee`
 --
-ALTER TABLE
-  `employee`
-ADD
-  CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`LOCATION_ID`) REFERENCES `location` (`LOCATION_ID`),
-ADD
-  CONSTRAINT `employee_ibfk_2` FOREIGN KEY (`JOB_ID`) REFERENCES `job` (`JOB_ID`);
-
+ALTER TABLE `employee`
+ADD CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`LOCATION_ID`) REFERENCES `location` (`LOCATION_ID`),
+  ADD CONSTRAINT `employee_ibfk_2` FOREIGN KEY (`JOB_ID`) REFERENCES `job` (`JOB_ID`);
 --
 -- Constraints for table `manager`
 --
-ALTER TABLE
-  `manager`
-ADD
-  CONSTRAINT `manager_ibfk_1` FOREIGN KEY (`LOCATION_ID`) REFERENCES `location` (`LOCATION_ID`);
-
+ALTER TABLE `manager`
+ADD CONSTRAINT `manager_ibfk_1` FOREIGN KEY (`LOCATION_ID`) REFERENCES `location` (`LOCATION_ID`);
 --
 -- Constraints for table `product`
 --
-ALTER TABLE
-  `product`
-ADD
-  CONSTRAINT `product_ibfk_1` FOREIGN KEY (`CATEGORY_ID`) REFERENCES `category` (`CATEGORY_ID`),
-ADD
-  CONSTRAINT `product_ibfk_2` FOREIGN KEY (`SUPPLIER_ID`) REFERENCES `supplier` (`SUPPLIER_ID`);
-
+ALTER TABLE `product`
+ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`CATEGORY_ID`) REFERENCES `category` (`CATEGORY_ID`),
+  ADD CONSTRAINT `product_ibfk_2` FOREIGN KEY (`SUPPLIER_ID`) REFERENCES `supplier` (`SUPPLIER_ID`);
 --
 -- Constraints for table `supplier`
 --
-ALTER TABLE
-  `supplier`
-ADD
-  CONSTRAINT `supplier_ibfk_1` FOREIGN KEY (`LOCATION_ID`) REFERENCES `location` (`LOCATION_ID`);
-
+ALTER TABLE `supplier`
+ADD CONSTRAINT `supplier_ibfk_1` FOREIGN KEY (`LOCATION_ID`) REFERENCES `location` (`LOCATION_ID`);
 --
 -- Constraints for table `transaction`
 --
-ALTER TABLE
-  `transaction`
-ADD
-  CONSTRAINT `transaction_ibfk_3` FOREIGN KEY (`CUST_ID`) REFERENCES `customer` (`CUST_ID`),
-ADD
-  CONSTRAINT `transaction_ibfk_4` FOREIGN KEY (`TRANS_D_ID`) REFERENCES `transaction_details` (`TRANS_D_ID`);
-
+ALTER TABLE `transaction`
+ADD CONSTRAINT `transaction_ibfk_3` FOREIGN KEY (`CUST_ID`) REFERENCES `customer` (`CUST_ID`),
+  ADD CONSTRAINT `transaction_ibfk_4` FOREIGN KEY (`TRANS_D_ID`) REFERENCES `transaction_details` (`TRANS_D_ID`);
 --
 -- Constraints for table `users`
 --
-ALTER TABLE
-  `users`
-ADD
-  CONSTRAINT `users_ibfk_3` FOREIGN KEY (`TYPE_ID`) REFERENCES `type` (`TYPE_ID`),
-ADD
-  CONSTRAINT `users_ibfk_4` FOREIGN KEY (`EMPLOYEE_ID`) REFERENCES `employee` (`EMPLOYEE_ID`);
-
+ALTER TABLE `users`
+ADD CONSTRAINT `users_ibfk_3` FOREIGN KEY (`TYPE_ID`) REFERENCES `type` (`TYPE_ID`),
+  ADD CONSTRAINT `users_ibfk_4` FOREIGN KEY (`EMPLOYEE_ID`) REFERENCES `employee` (`EMPLOYEE_ID`);
 COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
 ;
-
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */
 ;
-
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */
 ;

@@ -1,10 +1,10 @@
-<?php require('session.php');?>
-<?php if(logged_in()){ ?>
-          <script type="text/javascript">
-            window.location = "index.php";
-          </script>
-    <?php
-    } ?>
+<?php require('session.php'); ?>
+<?php if (logged_in()) { ?>
+  <script type="text/javascript">
+    window.location = "index.php";
+  </script>
+<?php
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
 
 </head>
 
@@ -34,24 +34,23 @@
     <!-- Outer Row -->
     <div class="row justify-content-center">
 
-      <div class="col-xl-10 col-lg-12 col-md-9">
+      <div class="col-xl-6 col-lg-12 col-md-9">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row shadow">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-              <div class="col-lg-6">
+              <div class="col-lg-12">
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome to Sales and Inventory!</h1>
                   </div>
                   <form class="user" role="form" action="processlogin.php" method="post">
                     <div class="form-group">
-                        <input class="form-control form-control-user" placeholder="Username" name="user" type="text" autofocus>
+                      <input class="form-control form-control-user" placeholder="Username" name="user" type="text" autofocus>
                     </div>
                     <div class="form-group">
-                        <input class="form-control form-control-user" placeholder="Password" name="password" type="password" value="">
+                      <input class="form-control form-control-user" placeholder="Password" name="password" type="password" value="">
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
@@ -60,11 +59,7 @@
                       </div>
                     </div>
                     <button class="btn btn-primary btn-user btn-block" type="submit" name="btnlogin">Login</button>
-                    <hr>
-                  <!-- <div class="text-center">
-                    <a class="small" href="register.php">Create an Account!</a>
-                  </div> -->
-                </form>
+                  </form>
                 </div>
               </div>
             </div>
@@ -85,17 +80,8 @@
   <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="../js/sb-admin-2.min.js"></script>
+  <script src="../js/scripts.js"></script>
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
