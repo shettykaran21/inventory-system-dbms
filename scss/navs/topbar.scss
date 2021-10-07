@@ -79,7 +79,7 @@
           position: absolute;
           bottom: 0;
           right: 0;
-          border: .125rem solid $white;
+          border: 0.125rem solid $white;
         }
       }
       .text-truncate {
@@ -109,8 +109,6 @@
     }
   }
 }
-
-.topbar.navbar-dark {}
 
 .topbar.navbar-light {
   .navbar-nav {

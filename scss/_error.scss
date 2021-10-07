@@ -1,7 +1,3 @@
-// Lucas Bebber's Glitch Effect
-// Tutorial and CSS from CSS Tricks
-// https://css-tricks.com/glitch-effect-text-images-svg/
-
 .error {
   color: $gray-800;
   font-size: 7rem;
@@ -13,7 +9,7 @@
   $steps: 20;
   @for $i from 0 through $steps {
     #{percentage($i*(1/$steps))} {
-      clip: rect(random(100)+px,9999px,random(100)+px,0);
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
     }
   }
 }
@@ -26,7 +22,7 @@
   color: $gray-800;
   background: $gray-100;
   overflow: hidden;
-  clip: rect(0,900px,0,0);
+  clip: rect(0, 900px, 0, 0);
   animation: noise-anim 2s infinite linear alternate-reverse;
 }
 
@@ -34,7 +30,7 @@
   $steps: 20;
   @for $i from 0 through $steps {
     #{percentage($i*(1/$steps))} {
-      clip: rect(random(100)+px,9999px,random(100)+px,0);
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
     }
   }
 }
@@ -47,6 +43,6 @@
   color: $gray-800;
   background: $gray-100;
   overflow: hidden;
-  clip: rect(0,900px,0,0);
+  clip: rect(0, 900px, 0, 0);
   animation: noise-anim-2 3s infinite linear alternate-reverse;
 }

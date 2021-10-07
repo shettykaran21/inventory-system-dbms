@@ -35,7 +35,7 @@ SET
 -- Table structure for table `category`
 --
 CREATE TABLE `category` (
-  `CATEGORY_ID` int(11) NOT NULL,
+  `CATEGORY_ID` int NOT NULL,
   `CNAME` varchar(50) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
@@ -60,7 +60,7 @@ VALUES
 -- Table structure for table `customer`
 --
 CREATE TABLE `customer` (
-  `CUST_ID` int(11) NOT NULL,
+  `CUST_ID` int NOT NULL,
   `FIRST_NAME` varchar(50) DEFAULT NULL,
   `LAST_NAME` varchar(50) DEFAULT NULL,
   `PHONE_NUMBER` varchar(11) DEFAULT NULL
@@ -88,15 +88,15 @@ VALUES
 -- Table structure for table `employee`
 --
 CREATE TABLE `employee` (
-  `EMPLOYEE_ID` int(11) NOT NULL,
+  `EMPLOYEE_ID` int NOT NULL,
   `FIRST_NAME` varchar(50) DEFAULT NULL,
   `LAST_NAME` varchar(50) DEFAULT NULL,
   `GENDER` varchar(50) DEFAULT NULL,
   `EMAIL` varchar(100) DEFAULT NULL,
   `PHONE_NUMBER` varchar(11) DEFAULT NULL,
-  `JOB_ID` int(11) DEFAULT NULL,
+  `JOB_ID` int DEFAULT NULL,
   `HIRED_DATE` varchar(50) NOT NULL,
-  `LOCATION_ID` int(11) DEFAULT NULL
+  `LOCATION_ID` int DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
 --
@@ -154,7 +154,7 @@ VALUES
 -- Table structure for table `job`
 --
 CREATE TABLE `job` (
-  `JOB_ID` int(11) NOT NULL,
+  `JOB_ID` int NOT NULL,
   `JOB_TITLE` varchar(50) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
@@ -172,7 +172,7 @@ VALUES
 -- Table structure for table `location`
 --
 CREATE TABLE `location` (
-  `LOCATION_ID` int(11) NOT NULL,
+  `LOCATION_ID` int NOT NULL,
   `PROVINCE` varchar(100) DEFAULT NULL,
   `CITY` varchar(100) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
@@ -227,7 +227,7 @@ VALUES
 CREATE TABLE `manager` (
   `FIRST_NAME` varchar(50) DEFAULT NULL,
   `LAST_NAME` varchar(50) DEFAULT NULL,
-  `LOCATION_ID` int(11) NOT NULL,
+  `LOCATION_ID` int NOT NULL,
   `EMAIL` varchar(50) DEFAULT NULL,
   `PHONE_NUMBER` varchar(11) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
@@ -272,15 +272,15 @@ VALUES
 -- Table structure for table `product`
 --
 CREATE TABLE `product` (
-  `PRODUCT_ID` int(11) NOT NULL,
+  `PRODUCT_ID` int NOT NULL,
   `PRODUCT_CODE` varchar(20) NOT NULL,
   `NAME` varchar(50) DEFAULT NULL,
   `DESCRIPTION` varchar(250) NOT NULL,
-  `QTY_STOCK` int(50) DEFAULT NULL,
-  `ON_HAND` int(250) NOT NULL,
-  `PRICE` int(50) DEFAULT NULL,
-  `CATEGORY_ID` int(11) DEFAULT NULL,
-  `SUPPLIER_ID` int(11) DEFAULT NULL,
+  `QTY_STOCK` int DEFAULT NULL,
+  `ON_HAND` int NOT NULL,
+  `PRICE` int DEFAULT NULL,
+  `CATEGORY_ID` int DEFAULT NULL,
+  `SUPPLIER_ID` int DEFAULT NULL,
   `DATE_STOCK_IN` varchar(50) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
@@ -607,9 +607,9 @@ VALUES
 -- Table structure for table `supplier`
 --
 CREATE TABLE `supplier` (
-  `SUPPLIER_ID` int(11) NOT NULL,
+  `SUPPLIER_ID` int NOT NULL,
   `COMPANY_NAME` varchar(50) DEFAULT NULL,
-  `LOCATION_ID` int(11) NOT NULL,
+  `LOCATION_ID` int NOT NULL,
   `PHONE_NUMBER` varchar(11) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
@@ -640,8 +640,8 @@ VALUES
 -- Table structure for table `transaction`
 --
 CREATE TABLE `transaction` (
-  `TRANS_ID` int(50) NOT NULL,
-  `CUST_ID` int(11) DEFAULT NULL,
+  `TRANS_ID` int NOT NULL,
+  `CUST_ID` int DEFAULT NULL,
   `NUMOFITEMS` varchar(250) NOT NULL,
   `SUBTOTAL` varchar(50) NOT NULL,
   `LESSVAT` varchar(50) NOT NULL,
@@ -807,7 +807,7 @@ VALUES
 -- Table structure for table `transaction_details`
 --
 CREATE TABLE `transaction_details` (
-  `ID` int(11) NOT NULL,
+  `ID` int NOT NULL,
   `TRANS_D_ID` varchar(250) NOT NULL,
   `PRODUCTS` varchar(250) NOT NULL,
   `QTY` varchar(250) NOT NULL,
@@ -962,7 +962,7 @@ VALUES
 -- Table structure for table `type`
 --
 CREATE TABLE `type` (
-  `TYPE_ID` int(11) NOT NULL,
+  `TYPE_ID` int NOT NULL,
   `TYPE` varchar(50) DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
@@ -980,11 +980,11 @@ VALUES
 -- Table structure for table `users`
 --
 CREATE TABLE `users` (
-  `ID` int(11) NOT NULL,
-  `EMPLOYEE_ID` int(11) DEFAULT NULL,
+  `ID` int NOT NULL,
+  `EMPLOYEE_ID` int DEFAULT NULL,
   `USERNAME` varchar(50) DEFAULT NULL,
   `PASSWORD` varchar(50) DEFAULT NULL,
-  `TYPE_ID` int(11) DEFAULT NULL
+  `TYPE_ID` int DEFAULT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 
 --
@@ -1155,7 +1155,7 @@ ADD
 ALTER TABLE
   `category`
 MODIFY
-  `CATEGORY_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `CATEGORY_ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 10;
 
 --
@@ -1164,7 +1164,7 @@ MODIFY
 ALTER TABLE
   `customer`
 MODIFY
-  `CUST_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `CUST_ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 17;
 
 --
@@ -1173,7 +1173,7 @@ MODIFY
 ALTER TABLE
   `employee`
 MODIFY
-  `EMPLOYEE_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `EMPLOYEE_ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 5;
 
 --
@@ -1182,7 +1182,7 @@ MODIFY
 ALTER TABLE
   `location`
 MODIFY
-  `LOCATION_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `LOCATION_ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 159;
 
 --
@@ -1191,7 +1191,7 @@ MODIFY
 ALTER TABLE
   `product`
 MODIFY
-  `PRODUCT_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `PRODUCT_ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 28;
 
 --
@@ -1200,7 +1200,7 @@ MODIFY
 ALTER TABLE
   `supplier`
 MODIFY
-  `SUPPLIER_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `SUPPLIER_ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 17;
 
 --
@@ -1209,7 +1209,7 @@ MODIFY
 ALTER TABLE
   `transaction`
 MODIFY
-  `TRANS_ID` int(50) NOT NULL AUTO_INCREMENT,
+  `TRANS_ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 13;
 
 --
@@ -1218,7 +1218,7 @@ MODIFY
 ALTER TABLE
   `transaction_details`
 MODIFY
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 21;
 
 --
@@ -1227,7 +1227,7 @@ MODIFY
 ALTER TABLE
   `users`
 MODIFY
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `ID` int NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 10;
 
 --
